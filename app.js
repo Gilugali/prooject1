@@ -10,6 +10,7 @@ const ml_counters = document.querySelector(".number span");
 window.addEventListener("scroll", () =>{
    if(!skillsPlayed) skillsCounter();
    mlCounters();
+   
 });
 /*  ------------------navbar sticky ------------------*/
 
