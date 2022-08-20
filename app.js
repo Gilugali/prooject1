@@ -51,7 +51,7 @@ function hasReached(el){
 function skillsCounter(){
     if(!hasReached(first_skill)) return;
     skillsCounter = true;
-    sk_counter.forEach((counter, i) =>{
+    
         let target = +counter.dataset.target;
         let strokeValue = 427 - 427 * (target / 100);
         progress_bars[i].style.setProperty("--target", strokeValue);
@@ -59,11 +59,11 @@ function skillsCounter(){
             updateCount(counter, target);
         }, 400)
 
-    });
+    };
  
      progress_bars.forEach((p) => p.style.animation = "progress 2s ease-in-out forwards");
  
-}
+
 /* ---------------- services js -----------------*/
 
 // function mlCounters (){
@@ -80,8 +80,34 @@ function skillsCounter(){
 
 
 /* ---------------- scrolling effect-----------------*/
-function smoothScroll(target, duration){
+function smoothScroll(target,duration){
     var target = document.querySelector(target);
-    var targetPosition = window.getBoundingClientRect().top;
-}
-smoothScroll(".about section")
+    var targetPosition = target.getBoundingClientRect().top;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+    function animations(currentTime){
+        if(startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = easing(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0,run);
+        if(timeElapsed < duration) requestAnimationFrame(animations);
+   }
+
+   function easing(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t * t + b;
+            t--;
+            return -c / 2 * (t *(t-2) -1) + b;
+        }
+        
+        requestAnimationFrame(animations);
+            
+    }
+var about = document.querySelector("#about");
+var home = document.querySelector('.section1');
+about.addEventListener('click', function(){
+  
+    smoothScroll('.about-section', 1000);
+});
+

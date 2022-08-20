@@ -86,7 +86,7 @@ header.logo{
     max-width: 75rem;
     padding: 0 0.15rem;
     /* background-color: red; */
-    margin: auto;
+    margin: 0 auto;
 }
 .logo{
     margin-right:1.5rem;
@@ -177,6 +177,19 @@ nav.container{
 
 
 /*grid portfolio----------showcase-are -----------*/
+section.showcase-area{
+    background-image: url("man.png");
+    background-size:cover;
+   background-position: center center;
+   position: relative;
+   top: 0;
+   bottom: 0;
+   z-index: -10;
+    
+    
+}
+
+
 .showcase-area{
     padding: 110px 0;
     display: flex;
@@ -185,6 +198,8 @@ nav.container{
     width: 100%;
     overflow: hidden;
     position: relative;
+   background-color: white;
+   
 }
 .showcase-area .container{
     display: grid;
@@ -283,7 +298,7 @@ nav.container{
  .btn.secondary-btn:hover::before{
     width: 100%;
  }
- .showcase-image{
+ /* .showcase-image{
     position: relative;
     width: 100%;
     min-height: calc(100% + 120px);
@@ -291,7 +306,7 @@ nav.container{
     background-color: var(--main-color-1);
     margin-top: -120px;
     border-radius: 0 0 80px 80px;
- }
+ } */
  .showcase-image .person{
     position: absolute;
     width: 95%;
