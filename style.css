@@ -178,13 +178,17 @@ nav.container{
 
 /*grid portfolio----------showcase-are -----------*/
 section.showcase-area{
-    background-image: url("man.png");
-    background-size:cover;
-   background-position: center center;
-   position: relative;
+    background-image: url("ed.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+   background-position: center right;
+  
+   height: 100vh;
+
+   /* position: relative;
    top: 0;
    bottom: 0;
-   z-index: -10;
+   z-index: -10; */
     
     
 }
@@ -415,6 +419,10 @@ section.showcase-area{
     margin-top: 1rem;
     letter-spacing:0.3px;
 
+}
+.uil {
+    font-size: 30px;
+    color: var(--heading-color);
 }
 .about-card:hover{
     transform: scale(1.1);
